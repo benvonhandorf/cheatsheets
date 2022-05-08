@@ -1,0 +1,144 @@
+\documentclass{scrartcl}
+
+\usepackage[T1]{fontenc}
+%\usepackage[french]{babel}
+
+%\usepackage[margin=1cm]{geometry}
+
+\usepackage{xcolor}
+
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\usepackage{array}
+\usepackage{booktabs}
+
+\usepackage[utf8]{inputenc}
+
+% \newunicodecharacter{24C3}{\rbutton}\circledS \circledS \circledS 
+
+\newcommand\kw[1]{\textcolor{blue}{\itshape #1}}
+
+\newfontfamily\symbolfont[
+    Path = ../fonts/Noto_Sans_Symbols,
+    Extension = *.ttf
+]
+
+\begin{document}
+
+\section{Math Mode}
+
+Sometimes you just need math whereever you are without a whole $\pi = 3.14ish$ section... \(e = 2.1\).
+
+\char"24C7
+
+ⓇaⓂb
+
+\section{Labels and References}
+\label{subsec:labelone}
+
+Text of some sort
+
+\begin{equation}
+    e^{i\pi}+1 = 0
+\label{eq:labeltwo}
+\end{equation}
+
+References to subsection~\ref{subsec:labelone} and the equation~\ref{eq:labeltwo}
+
+\section{Tables}
+
+\begin{tabular}{lp{5cm}l}
+    \toprule
+    First & Second & Third \\
+    \midrule
+    Alpha & Beta & Gamma \\
+    \cmidrule{1-2}
+    Epsilon & \lipsum[1] & Nu \\
+    \cmidrule{1-1}
+    \cmidrule{3-3}
+    Sigma & Tao & Rho \\
+    \bottomrule
+\end{tabular}
+
+\section{Figures and Floats}
+
+\lipsum[1-4] % Just a few filler paragraphs
+
+Test location.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{example-image-a.png}
+  \caption{An example image}
+\end{figure}
+
+\lipsum[6-10] % Just a few filler paragraphs
+
+\section{Graphics and stuff}
+
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{example-image}
+\end{center}
+
+\section{Extending latex}
+
+\subsection{Babel}
+
+This is a lot of filler which is going to demonstrate how LaTeX hyphenates
+\kw{material}, and which will be able to give us at least one hyphenation point.
+This is a lot of filler which is going to demonstrate how LaTeX hyphenates
+material, and which will be able to give us at least one hyphenation point.
+
+\section{Lists}
+    
+\begin{itemize}
+    \item Unordered Lists
+    \item Other kinds of Lists
+    \begin{itemize}
+        \item Nested unordered lists
+    \end{itemize}
+    \item Lists we don't use
+    \begin{enumerate}
+        \item Nested Lists
+    \end{enumerate}
+\end{itemize}
+
+\begin{enumerate}
+    \item First Lists
+    \item Second Lists
+    \item Third Lists
+\end{enumerate}
+
+\paragraph{Paragraphs are real}
+
+Or so I've been told.
+
+\subparagraph{But what even are subparagraphs?}
+
+I am unconvinced.
+
+Hello world.
+
+Let's not mess with perfection, eh?
+% Some comments
+
+And also a simple document\footnote{With a sneaky complicating footnote}.
+
+Some text with \emph{emphasis and \emph{nested} content}.
+
+Some text in \textit{italic and \textit{nested} content}.
+
+\section{First section}
+
+This is the section the first.
+
+\subsection{Section one dot one}
+
+Subsection stuff
+
+\section{Section the second}
+
+
+    
+\end{document}

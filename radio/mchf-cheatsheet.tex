@@ -1,0 +1,78 @@
+\documentclass{scrartcl}
+
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage[abspath]{currfile}
+\usepackage{datetime}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,shapes.misc,shadows}
+
+\usepackage{array}
+
+%\usepackage[french]{babel}
+
+%\usepackage[margin=1cm]{geometry}
+
+\usepackage{xcolor}
+
+\usepackage{graphicx}
+
+\usepackage[paperwidth=50mm,paperheight=35mm,margin=0cm,noheadfoot]{geometry}
+
+% \newunicodecharacter{24C3}{\rbutton}\circledS \circledS \circledS 
+
+\newfontfamily\NotoSansSymbols[
+    Path = \currfileabsdir,
+    UprightFont = ../fonts/Noto_Sans_Symbols/static/*-Regular,
+    BoldFont = ../fonts/Noto_Sans_Symbols/static/*-Bold,
+    ItalicFont = ../fonts/Noto_Sans_Symbols/static/*-Regular,
+    Extension = .ttf
+]{NotoSansSymbols}
+
+\newfontfamily\NotoSansSymbolsTwo[
+    Path = \currfileabsdir,
+    UprightFont = ../fonts/Noto_Sans_Symbols_2/NotoSansSymbols2-Regular,
+    BoldFont = ../fonts/Noto_Sans_Symbols_2/NotoSansSymbols2-Regular,
+    ItalicFont = ../fonts/Noto_Sans_Symbols_2/NotoSansSymbols2-Regular,
+    Extension = .ttf
+]{NotoSansSymbolsTwo}
+
+\newcommand\longpress{{\NotoSansSymbols\symbol{"2192}}}
+
+\newcommand\leftclick{{\NotoSansSymbols\symbol{"24C1}}}
+\newcommand\rightclick{{\NotoSansSymbols\symbol{"24C7}}}
+\newcommand\middleclick{{\NotoSansSymbols\symbol{"24C2}}}
+\newcommand\encoderclick{{\NotoSansSymbols\symbol{"24BA}}}
+\newcommand\powerclick{{\NotoSansSymbolsTwo\symbol{"23FB}}}
+\newcommand\powerlongclick{{\NotoSansSymbolsTwo\symbol{"23FB}\longpress}}
+
+\newcommand*\click[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {\tiny #1};}}
+\newcommand*\longclick[1]{\tikz[baseline=(char.base)]{
+                \node[shape=circle,draw,inner sep=1pt] (char) {\tiny #1};}}
+
+\newcommand\menumode{\tiny{MENU}}
+\newcommand\memmode{\tiny{MEM}}
+    
+
+\begin{document}
+
+\currenttime
+
+\begin{tabular}{cl|cl}
+    \powerclick & Toggle Brightness & \click{M1}\longpress & CW Macros \\
+    \click{M2}\longpress & Toggle NB / AGC & \click{M3}\longpress & Toggle Line In \\
+    \click{G4} & Toggle Filter BW & \click{G4}\longpress & Set BW with E3 \\
+    \click{F2} & Snap Carrier & \click{F2}\longpress & Change Meter (SWR,ALC,AUD) \\
+    \click{F3} & Toggle Split & \click{F3}\longpress & Toggle \memmode Mode \\
+    \memmode+\click{F3} & Toggle Waterfall/Scope & \click{F3}\longpress & Toggle Memory Mode \\
+    \click{F4} & Toggle VFO A/B & \click{F4}\longpress & Copy VFO to other \\
+    \click{F5} & Tune & \click{F5}\longpress & Tgl TX Enable \\
+
+
+    
+\end{tabular}
+
+    
+\end{document}
