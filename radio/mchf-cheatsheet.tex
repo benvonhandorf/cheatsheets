@@ -20,7 +20,7 @@
 
 \usepackage{graphicx}
 
-\usepackage[paperwidth=50mm,paperheight=35mm,margin=0cm,noheadfoot]{geometry}
+\usepackage[paperwidth=100mm,paperheight=60mm,margin=0.5cm,noheadfoot,showframe=true]{geometry}
 
 % \newunicodecharacter{24C3}{\rbutton}\circledS \circledS \circledS 
 
@@ -55,12 +55,12 @@
                 \node[shape=circle,draw,inner sep=1pt] (char) {\tiny #1};}}
 
 \newcommand\menumode{\tiny{MENU}}
-\newcommand\memmode{\tiny{MEM}}
+\newcommand\memmode{\tiny{\emph{MEM}}}
     
 
 \begin{document}
 
-\currenttime
+\begin{tiny}
 
 \begin{tabular}{cl|cl}
     \powerclick & Toggle Brightness & \click{M1}\longpress & CW Macros \\
@@ -76,10 +76,15 @@
     
 \end{tabular}
 
+\end{tiny}
+
 \eject 
 \pagewidth=8.5in 
 \pageheight=11in
 
 \layout
+
+
+\currenttime
     
 \end{document}

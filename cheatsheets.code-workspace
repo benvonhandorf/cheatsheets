@@ -6,5 +6,10 @@
 	],
 	"settings": {
 		"latex-workshop.latex.recipe.default": "lastUsed"
+	},
+	"extensions": {
+		"recommendations": [
+			"James-Yu.latex-workshop"
+		]
 	}
 }
